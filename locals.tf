@@ -6,6 +6,6 @@ locals {
   public_subnets_cidr = lookup(lookup(var.vpc, var.env, null), "public_subnets_cidr", null)
   public_subnets_ids  = lookup(lookup(var.vpc, var.env, null), "public_subnets_ids", null)
 
-  alb_subnets = var.internal ? local.app_subnets_ids : public_subnets_ids
+  alb_subnets = var.internal ? local.app_subnets_ids : local.public_subnets_ids
 }
 
