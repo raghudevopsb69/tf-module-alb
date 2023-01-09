@@ -1,5 +1,5 @@
 resource "aws_security_group" "allow_alb" {
-  name        = "${var.env}_allow_alb"
+  name        = "${var.env}_allow_alb_${var.name}"
   description = "Allow ALB Access"
   vpc_id      = local.vpc_id
 
@@ -20,7 +20,7 @@ resource "aws_security_group" "allow_alb" {
   }
 
   tags = {
-    Name = "${var.env}_allow_alb"
+    Name = "${var.env}_allow_alb_${var.name}"
   }
 }
 
