@@ -1,4 +1,4 @@
-output "load_balancers" {
-  value = aws_lb.alb
+output "lb_arn" {
+  value = aws_lb.alb.*.arn
 }
 
