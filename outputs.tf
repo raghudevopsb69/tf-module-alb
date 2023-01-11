@@ -1,4 +1,4 @@
-output "lb_arn" {
+output "alb" {
   value = aws_lb.alb
 }
 
