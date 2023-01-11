@@ -1,4 +1,4 @@
 output "lb_arn" {
-  value = aws_lb.alb.*.arn
+  value = { for k, v in aws_lb.alb : k => v.arn }
 }
 
