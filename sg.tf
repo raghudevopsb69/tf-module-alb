@@ -5,10 +5,10 @@ resource "aws_security_group" "allow_alb" {
 
   ingress {
     description = "HTTP"
-    from_port   = 80
-    to_port     = 80
+    from_port   = local.app_port
+    to_port     = local.app_port
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = local.allow_cidr
   }
 
   egress {
